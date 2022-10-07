@@ -1,0 +1,136 @@
+<div class="container-fluid bg-light pt-3">
+  <nav
+    style="
+      --bs-breadcrumb-divider: ' &#xf054;';
+      font-family: Arial, 'FontAwesome';
+    "
+    aria-label="breadcrumb"
+  >
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item fw-bold">
+        <a href="#" class="text-dark" style="text-decoration: none">Cars</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">List Cars</li>
+    </ol>
+  </nav>
+
+  <div class="d-flex">
+    <h4 class="fw-bold">List cars</h4>
+    <a
+      class="add-blue ms-auto d-flex text-white"
+      style="cursor: pointer"
+      href="./add"
+    >
+      <i class="bi bi-plus px-2" style="font-size: 24px"></i>
+      <p class="text-center mb-0">Add New Cars</p>
+    </a>
+  </div>
+
+  <div class="d-flex mt-3 list-car__size">
+    <div class="btn btn-outline-primary me-3">All</div>
+    <div class="btn btn-outline-primary me-3">Small</div>
+    <div class="btn btn-outline-primary me-3">Medium</div>
+    <div class="btn btn-outline-primary me-3">Large</div>
+  </div>
+
+  <div class="row mt-4" style="row-gap: 20px">
+    <% cars.map((car) => { %>
+    <div class="col-md-4">
+      <div
+        class="card"
+        style="
+          -webkit-box-shadow: 0 0 10px #f1f3ff;
+          box-shadow: 0 0 10px #f1f3ff;
+          border-radius: 8px;
+          box-shadow: 20px;
+          row-gap: 20px;
+        "
+      >
+        <div class="card-body">
+          <div class="text-center">
+            <img
+              src="<%= car.photo %>"
+              style="max-width: 100%"
+              class="px-4 pt-0"
+            />
+          </div>
+          <p class="card-text fw-bold"><%= car.name %></p>
+          <p class="card-text" style="font-weight: bold">
+            Rp. <%= car.price %> /Hari
+          </p>
+          <p class="card-text" style="font-size: small">
+            Updated At: <span class="fw-bold"><%= car.updatedAt %></span>
+          </p>
+          <div class="d-flex gap-2 justify-content-center alter-button">
+            <!-- Button trigger modal -->
+            <button
+              type="button"
+              class="btn btn-outline-danger delete-button"
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModal"
+            >
+              <i class="fa-solid fa-trash pe-3"></i> Delete
+            </button>
+
+            <!-- Modal -->
+            <div
+              class="modal fade"
+              id="exampleModal"
+              tabindex="-1"
+              aria-labelledby="exampleModalLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                  <div
+                    class="modal-header justify-content-center border-bottom-0"
+                  >
+                    <h5 class="modal-title" id="exampleModalLabel">
+                      <img src="../images/breakdown.png" alt="" />
+                    </h5>
+                  </div>
+                  <div class="modal-body text-center">
+                    <h5 class="fw-bold">Menghapus Data Mobil</h5>
+                    <p class="px-5 mx-4" style="font-size: 14px">
+                      Setelah dihapus, data mobil tidak dapat dikembalikan.
+                      Yakin ingin menghapus?
+                    </p>
+                  </div>
+                  <div class="modal-footer justify-content-center border-top-0">
+                    <form
+                      method="post"
+                      action="http://localhost:9000/delete-car/ <%= car.id %>"
+                    >
+                      <button
+                        type="submit"
+                        class="btn btn-primary button-allow"
+                      >
+                        YA
+                      </button>
+                    </form>
+                    <button
+                      type="button"
+                      class="btn btn-outline-primary button-deny"
+                      data-bs-dismiss="modal"
+                    >
+                      TIDAK
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- <button class="btn btn-success edit-button"></button> -->
+            <a
+              href="./edit/<%= car.id %>"
+              class="text-white text-decoration-none btn btn-success edit-button"
+              style="padding-top: 10px"
+            >
+              <i class="fa-solid fa-pen-to-square pe-3"></i> Edit
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% }) %>
+  </div>
+</div>

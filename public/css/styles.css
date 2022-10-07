@@ -1,0 +1,191 @@
+body {
+  background-color: #e5e5e5;
+}
+#wrapper {
+  overflow-x: hidden;
+}
+
+#sidebar-wrapper {
+  min-height: 100vh;
+  margin-left: -15rem;
+  transition: margin 0.25s ease-out;
+}
+
+#sidebar-wrapper .sidebar-heading {
+  padding: 0.875rem 1.25rem;
+  font-size: 1.2rem;
+}
+
+#sidebar-wrapper .list-group {
+  width: 15rem;
+}
+
+#page-content-wrapper {
+  min-width: 100vw;
+  background-color: white;
+}
+
+body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
+  margin-left: 0;
+}
+
+@media (min-width: 768px) {
+  #sidebar-wrapper {
+    margin-left: 0;
+  }
+
+  #page-content-wrapper {
+    min-width: 0;
+    width: 100%;
+  }
+
+  body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
+    margin-left: -15rem;
+  }
+}
+
+.size-profile {
+  width: 37px;
+  height: 37px;
+}
+
+.size-brand {
+  width: 35px;
+  height: 35px;
+}
+
+/* .bg-body {
+  background-color: #d0d0d0 !important;
+} */
+.bg-blue {
+  background-color: #0d28a6 !important;
+  width: 7vw;
+}
+
+.side {
+  padding: 15px 1.7rem;
+}
+
+.middle {
+  margin: auto !important;
+}
+
+.bordernone {
+  border: none;
+}
+
+/* navbar */
+.profile-user {
+  width: 6vw;
+  border-radius: 50%;
+  background-color: rgba(207, 212, 237, 1);
+}
+.navbar-top {
+  margin-top: 8px;
+}
+
+/* content */
+.add-blue {
+  background-color: #0d28a6;
+  width: 140px;
+  height: 36px;
+  text-decoration: none;
+}
+
+.add-blue p {
+  align-self: center;
+  font-size: 14px;
+}
+
+.form-add__car {
+  background-color: #e5e5e5;
+  height: 90%;
+}
+
+.navigation-bar ul .form-control {
+  font-family: Arial, "bootstrap-icons";
+  opacity: 0.5;
+  border: 1px solid grey;
+  border-radius: 2px;
+}
+.navigation-bar ul .button-search {
+  border: 1px solid #0d28a6;
+  color: #0d28a6;
+  border-radius: 2px;
+}
+
+.form-card .form-control,
+.form-card select {
+  color: #151515 !important;
+  width: 339px;
+}
+
+.form-card {
+  background-color: white;
+  width: 95%;
+}
+
+.confim-button {
+  padding-top: 150px;
+}
+
+.confim-button .button-cancel {
+  border: 1px solid #0d28a6;
+  color: #0d28a6;
+  border-radius: 3px;
+}
+
+.confim-button .button-save {
+  border: 1px solid #0d28a6;
+  background-color: #0d28a6;
+  border-radius: 3px;
+}
+
+/* add new car */
+.list-car__size div {
+  border-radius: 2px;
+  border: 2px solid rgba(207, 212, 237, 1);
+  color: rgba(207, 212, 237, 1);
+  font-weight: bold;
+}
+
+.list-car__size div:hover {
+  border: 2px solid #0d28a6;
+  background-color: rgba(207, 212, 237, 1);
+  color: #0d28a6;
+}
+
+/* card cars */
+.alter-button .delete-button {
+  width: 49%;
+  height: 48px;
+  border-radius: 2px;
+}
+
+.alter-button .edit-button {
+  width: 49%;
+  height: 48px;
+  background-color: #4caf50;
+  border-radius: 2px;
+}
+
+/* modal */
+.modal-content .modal-footer .button-allow,
+.modal-content .modal-footer .button-deny {
+  border: 1px solid #0d28a6;
+  width: 87px;
+  padding: 8px 0;
+  border-radius: 2px;
+}
+
+.modal-content .modal-footer .button-allow {
+  background-color: #0d28a6;
+}
+
+.modal-content .modal-footer .button-deny {
+  color: #0d28a6;
+}
+
+.modal-content .modal-footer .button-deny:hover {
+  background-color: rgba(13, 40, 166, 0.5);
+}
